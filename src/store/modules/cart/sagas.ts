@@ -1,7 +1,17 @@
-import { all, takeLatest } from 'redux-saga/effects';
+import { all, select, takeLatest } from 'redux-saga/effects';
+import { IState } from '../..';
+import { addProductToCart } from './actions';
 
-function checkProductStock() {
-  console.log('Peguei')
+type checkProductStockRequest = ReturnType<typeof addProductToCart>
+
+function* checkProductStock({ payload }: checkProductStockRequest) {
+  const { product} = payload;
+
+  const currentQuantity: number = yield select((state: IState) => {
+    return state.cart.items.find(item => item.product.id === product.id)?.quantity ?? 0;
+  });
+
+  console.log(currentQuantity)
 }
 
 export default all([
