@@ -2,17 +2,17 @@
   "products": [
     {
       "id": 1,
-      "title": "Casaco maneiro",
+      "title": "Casaco",
       "price": 290.90
     },
     {
       "id": 2,
-      "title": "Óculos barato",
+      "title": "Óculos",
       "price": 20.90
     },
     {
       "id": 3,
-      "title": "Tênis da moda",
+      "title": "Tênis",
       "price": 500.00
     }
   ],
